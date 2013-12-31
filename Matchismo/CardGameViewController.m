@@ -73,9 +73,6 @@
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: 0"];
 }
 
-- (IBAction)switchLevel:(UISwitch *)sender {
-    [self resetGame];
-}
 - (IBAction)gameLevel:(UISegmentedControl *)sender {
     if (self.gameLevelButton.selectedSegmentIndex == 0) {
         [self resetGame];
