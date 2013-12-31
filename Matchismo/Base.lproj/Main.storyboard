@@ -143,7 +143,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ei1-dW-sIJ">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="reset" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ei1-dW-sIJ">
                                 <rect key="frame" x="113" y="279" width="67" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -161,10 +161,23 @@
                                     <action selector="switchLevel:" destination="vXZ-lx-hvc" eventType="valueChanged" id="9dF-uu-eSd"/>
                                 </connections>
                             </switch>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ozI-Q3-UJE">
+                                <rect key="frame" x="85" y="323" width="123" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="2-Card"/>
+                                    <segment title="3-Card"/>
+                                </segments>
+                                <connections>
+                                    <action selector="gameLevel:" destination="vXZ-lx-hvc" eventType="valueChanged" id="OlJ-Bk-M0W"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="gameLevelButton" destination="ozI-Q3-UJE" id="Zpu-vj-FP4"/>
                         <outlet property="scoreLabel" destination="6kU-dg-rUR" id="pwD-3m-iTv"/>
                         <outletCollection property="cardButtons" destination="RbF-yg-RdK" id="yrX-hZ-twK"/>
                         <outletCollection property="cardButtons" destination="g4N-Vf-DjB" id="ZGO-kh-fdy"/>

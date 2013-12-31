@@ -12,7 +12,6 @@
 - (int)match:(NSArray *)otherCards
 {
     int score = 0;
-    
     if ([otherCards count] == 1) {
         PlayingCard *otherCard = [otherCards firstObject];
         if (otherCard.rank == self.rank) {
@@ -20,6 +19,38 @@
         }else if ([otherCard.suit isEqualToString:self.suit ]){
             score = 1;
         }
+    } else if ([otherCards count] >= 1) {
+        BOOL allMatch;
+        allMatch = NO;
+        NSLog(@"size from in match %d", [otherCards count]);
+        NSLog(@"array %@", otherCards);
+        for (PlayingCard *otherCard in otherCards) {
+            if (otherCard.rank == self.rank) {
+                allMatch = YES;
+            } else {
+                allMatch = NO;
+            }
+            if (!allMatch) {
+                break;
+            }
+        }
+        if (allMatch) {
+            score = 50;
+        }
+        for (PlayingCard *otherCard in otherCards) {
+            if ([otherCard.suit isEqualToString:self.suit]) {
+                allMatch = YES;
+            } else {
+                allMatch = NO;
+            }
+            if (!allMatch) {
+                break;
+            }
+        }
+        if (allMatch) {
+            score = 30  ;
+        }
+
     }
     return score;
 }

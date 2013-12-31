@@ -17,6 +17,7 @@
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *gameLevelButton;
 
 @end
 
@@ -34,28 +35,13 @@
     return [[PlayingCardDeck alloc]init];
 }
 
-- (IBAction)reset:(UIButton *)sender {
-    [self resetGame];
-}
+
 - (IBAction)touchCardButton:(UIButton *)sender
 {
     int chosenButtonIndex = [self.cardButtons indexOfObject:sender];
-    [self.game chooseCardAtIndex:chosenButtonIndex];
+    [self.game chooseCardAtIndex:chosenButtonIndex]; //play
     [self updateUI];
 
-}
-- (void)resetGame
-{
-    self.game = Nil;
-    self.game = [self game];
-    for(UIButton *cardButton in self.cardButtons) {
-        [cardButton setTitle:@"" forState:UIControlStateNormal];
-        [cardButton setBackgroundImage:[UIImage imageNamed:@"cardback"]
-                              forState:UIControlStateNormal];
-        cardButton.enabled = YES;
-    }
-    self.scoreLabel.text = [NSString stringWithFormat:@"Score: 0"];
-    
 }
   -(void)updateUI
 {
@@ -71,12 +57,37 @@
         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
     }
 }
-- (IBAction)gameLevel:(UISegmentedControl *)sender {
+- (IBAction)reset:(UIButton *)sender {
+    [self resetGame];
+}
+- (void)resetGame
+{
+    self.game = Nil;
+    self.game = [self game];
+    for(UIButton *cardButton in self.cardButtons) {
+        [cardButton setTitle:@"" forState:UIControlStateNormal];
+        [cardButton setBackgroundImage:[UIImage imageNamed:@"cardback"]
+                              forState:UIControlStateNormal];
+        cardButton.enabled = YES;
+    }
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: 0"];
 }
 
 - (IBAction)switchLevel:(UISwitch *)sender {
     [self resetGame];
 }
+- (IBAction)gameLevel:(UISegmentedControl *)sender {
+    if (self.gameLevelButton.selectedSegmentIndex == 0) {
+        [self resetGame];
+        self.game.gameLevel = 1;
+        NSLog(@"2-Card");
+    } else if (self.gameLevelButton.selectedSegmentIndex == 1) {
+        NSLog(@"3-Card");
+        [self resetGame];
+        self.game.gameLevel = 2;
+    }
+}
+
 
 - (NSString *) titleForCard:(Card *)card
 {
