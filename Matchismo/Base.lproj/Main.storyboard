@@ -154,13 +154,6 @@
                                     <action selector="reset:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MpG-42-Imj"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ykf-mV-oFS">
-                                <rect key="frame" x="122" y="374" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="switchLevel:" destination="vXZ-lx-hvc" eventType="valueChanged" id="9dF-uu-eSd"/>
-                                </connections>
-                            </switch>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ozI-Q3-UJE">
                                 <rect key="frame" x="85" y="323" width="123" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
