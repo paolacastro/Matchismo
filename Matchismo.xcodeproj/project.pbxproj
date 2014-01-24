@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B62B4067188476C400C6A0D8 /* PlayingCardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B62B4066188476C400C6A0D8 /* PlayingCardGameViewController.m */; };
+		B62EA9971892330000E6645C /* SetCardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B62EA9961892330000E6645C /* SetCardGameViewController.m */; };
 		B6A92F29185ECE1D0084A6A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A92F28185ECE1D0084A6A7 /* Foundation.framework */; };
 		B6A92F2B185ECE1D0084A6A7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A92F2A185ECE1D0084A6A7 /* CoreGraphics.framework */; };
 		B6A92F2D185ECE1D0084A6A7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A92F2C185ECE1D0084A6A7 /* UIKit.framework */; };
@@ -39,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B62B4065188476C400C6A0D8 /* PlayingCardGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardGameViewController.h; sourceTree = "<group>"; };
+		B62B4066188476C400C6A0D8 /* PlayingCardGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardGameViewController.m; sourceTree = "<group>"; };
+		B62EA9951892330000E6645C /* SetCardGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetCardGameViewController.h; path = Model/SetCardGameViewController.h; sourceTree = "<group>"; };
+		B62EA9961892330000E6645C /* SetCardGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetCardGameViewController.m; path = Model/SetCardGameViewController.m; sourceTree = "<group>"; };
 		B6A92F25185ECE1D0084A6A7 /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A92F28185ECE1D0084A6A7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B6A92F2A185ECE1D0084A6A7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -171,6 +177,8 @@
 		B6A92F60185ED3FF0084A6A7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B62EA9951892330000E6645C /* SetCardGameViewController.h */,
+				B62EA9961892330000E6645C /* SetCardGameViewController.m */,
 				B6A92F5E185ED3F60084A6A7 /* Card.m */,
 				B6A92F5D185ED3F60084A6A7 /* Card.h */,
 				B6A92F61185ED4860084A6A7 /* PlayingCard.h */,
@@ -181,6 +189,8 @@
 				B6A92F68185ED6830084A6A7 /* PlayingCardDeck.m */,
 				B6A92F6B185ED7A30084A6A7 /* CardMatchingGame.h */,
 				B6A92F6C185ED7A30084A6A7 /* CardMatchingGame.m */,
+				B62B4065188476C400C6A0D8 /* PlayingCardGameViewController.h */,
+				B62B4066188476C400C6A0D8 /* PlayingCardGameViewController.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -291,6 +301,8 @@
 				B6A92F69185ED6830084A6A7 /* PlayingCardDeck.m in Sources */,
 				B6A92F66185ED4FE0084A6A7 /* Deck.m in Sources */,
 				B6A92F5F185ED3F60084A6A7 /* Card.m in Sources */,
+				B62B4067188476C400C6A0D8 /* PlayingCardGameViewController.m in Sources */,
+				B62EA9971892330000E6645C /* SetCardGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +511,7 @@
 				B6A92F59185ECE1E0084A6A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B6A92F5A185ECE1E0084A6A7 /* Build configuration list for PBXNativeTarget "MatchismoTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +520,7 @@
 				B6A92F5C185ECE1E0084A6A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
