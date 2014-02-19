@@ -35,21 +35,26 @@
 
 - (IBAction)touchCardButton:(UIButton *)sender
 {
+    NSLog(@"touched card");
     int chosenButtonIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:chosenButtonIndex]; //play
     [self updateUI];
 
 }
-  -(void)updateUI
+- (void)updateUI
 {
     for (UIButton *cardButton in self.cardButtons) {
         // get index of button
         int cardButtonIndex = [self.cardButtons indexOfObject:cardButton];
         // get the card at that index
         Card *card = [self.game cardAtIndex:cardButtonIndex];
-        [cardButton setTitle:[self titleForCard:card] forState:UIControlStateNormal];
+        if ([[self titleForCard:card] isKindOfClass:[NSAttributedString class]]) {
+            [cardButton setAttributedTitle:[self titleForCard:card] forState:UIControlStateNormal];
+        }else if ([[self titleForCard:card] isKindOfClass:[NSString class]]){
+            [cardButton setTitle:[self titleForCard:card] forState:UIControlStateNormal];
+        }
         [cardButton setBackgroundImage:[self backgroundImageForCard:card]
-                              forState:UIControlStateNormal];
+                                   forState:UIControlStateNormal];
         cardButton.enabled = !card.isMatched;
         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
     }

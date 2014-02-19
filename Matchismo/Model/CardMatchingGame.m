@@ -24,7 +24,7 @@
 {
     self = [super init]; //super's designated initializer
     if (self) {
-        self.gameLevel = 1;
+        self.gameLevel = 2;
         for (int i = 0; i < count; i++) {
             Card * card = [deck drawRandomCard];
             if (card) {
@@ -53,6 +53,7 @@ NSMutableArray *chosenCards;
 
 - (void)chooseCardAtIndex:(NSUInteger)index
 {
+    NSLog(@"Game Level is: %d",self.gameLevel);
     int IS_CHOSEN_COUNT = 0;
     chosenCards = [NSMutableArray arrayWithObjects:nil];
     Card *card = [self cardAtIndex:index];
@@ -62,6 +63,7 @@ NSMutableArray *chosenCards;
         } else {
             //match agaisnt another card OR CARDSS??
             if (self.gameLevel == 1) {
+                NSLog(@"Game Level is: %d",self.gameLevel);
                 for (Card *otherCard in self.cards) {
                     if (otherCard.isChosen && !otherCard.isMatched) {
                         int matchScore = [card match:@[otherCard]]; // matching happens here

@@ -50,7 +50,6 @@
         if (allMatch) {
             score = 30  ;
         }
-
     }
     return score;
 }
